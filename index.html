@@ -27,16 +27,7 @@ function getPlayerChoice() {
     return playerSelection; 
 }
 
-function getComputerChoice() {
-    let computerSelection = getComputerChoice();
-    return computerSelection   
-}
-
- 
-    
-
 function playRound(playerSelection = getPlayerChoice(), computerSelection = getComputerChoice()) {
-    getBothChoices();
     if (playerSelection == "rock" && computerSelection == "Scissor") {
         return "Player wins";
     } else if (playerSelection == "paper" && computerSelection == "Rock") {
@@ -54,7 +45,6 @@ function playRound(playerSelection = getPlayerChoice(), computerSelection = getC
      }
 }
 
-console.log(playRound());
 
 function game() {
     let playerScore = 0
