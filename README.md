@@ -1,0 +1,1 @@
+A simple Rock Paper Scissors game for the Odin Project foundations course
