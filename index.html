@@ -17,8 +17,6 @@ const buttonPaper = document.querySelector('#paper');
 const buttonScissor = document.querySelector('#scissor');
 
 
- 
-
 function getComputerChoice () {
     randomNumber = Math.floor(Math.random()*3);
     switch (randomNumber) {
@@ -35,8 +33,14 @@ let computerSelection = getComputerChoice();
 console.log(computerSelection)
 
 function getPlayerChoice() {
-    let playerSelection = prompt("Enter your choice (rock/paper/scissor): ").toLowerCase();
-    return playerSelection; 
+    if (document.getElementById('rock').clicked == true) {
+        return "rock";
+    } else if (document.getElementById('paper').clicked == true) {
+        return "paper";
+    } else if (document.getElementById('scissor').clicked == true) {
+        return "scissor"
+    }
+
 }
 
 let playerScore = 0;
