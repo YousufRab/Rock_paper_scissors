@@ -10,6 +10,7 @@
     <button id="rock">ROCK</button>
     <button id="paper">PAPER</button>
     <button id="scissor">SCISSOR</button>
+    <div id="results"></div>
 </body>
 <script>
 const buttonRock = document.querySelector('#rock');
@@ -30,7 +31,7 @@ function getComputerChoice () {
 }
 
 let computerSelection = getComputerChoice();
-console.log(computerSelection)
+
 
 function getPlayerChoice() {
     if (document.getElementById('rock').clicked == true) {
