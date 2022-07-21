@@ -3,9 +3,8 @@ let playerSelection;
 let playerScore = 0;
 let computerScore = 0;  
 
-const buttonRock = document.querySelector('#rock');
-const buttonPaper = document.querySelector('#paper');
-const buttonScissor = document.querySelector('#scissor');
+const buttons = document.querySelectorAll('button');
+
 
 
 function getComputerChoice () {
@@ -31,7 +30,7 @@ function getPlayerChoice() {
     }
 }
 
-function playRound(playerSelection) {;
+function playRound(playerSelection, computerSelection) {;
     let computerSelection = getComputerChoice();
 
     if (playerSelection == "rock" && computerSelection == "Scissor") {
