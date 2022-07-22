@@ -1,10 +1,21 @@
-let computerSelection = getComputerChoice();
-let playerSelection;
+
 let playerScore = 0;
 let computerScore = 0;  
 
-const buttons = document.querySelectorAll('button');
+const rockButton = document.querySelector('#rock');
+const paperButton = document.querySelector('#paper');
+const scissorButton = document.querySelector('#scissor');
 
+const scoreDisplay = document.querySelector('#results');
+const winnerDisplay = document.createElement('div');
+
+
+rockButton.addEventListener('click', () => playRound("rock"));
+paperButton.addEventListener('click', () => playRound("paper"));
+scissorButton.addEventListener('click', () => playRound("scissor"));
+
+let computerSelection = getComputerChoice();
+let playerSelection;
 
 
 function getComputerChoice () {
@@ -20,19 +31,10 @@ function getComputerChoice () {
 }
 
 
-function getPlayerChoice() {
-    if (document.getElementById('rock').clicked == true) {
-        return "rock";
-    } else if (document.getElementById('paper').clicked == true) {
-        return "paper";
-    } else if (document.getElementById('scissor').clicked == true) {
-        return "scissor";
-    }
-}
 
-function playRound(playerSelection, computerSelection) {;
+function playRound(playerSelection) {;
     let computerSelection = getComputerChoice();
-
+        
     if (playerSelection == "rock" && computerSelection == "Scissor") {
         playerScore += 1;
     } else if (playerSelection == "paper" && computerSelection == "Rock") {
@@ -48,23 +50,30 @@ function playRound(playerSelection, computerSelection) {;
     } else if ((playerSelection == "rock" && computerSelection == "Rock") || (playerSelection == "paper" && computerSelection == "Paper") || (playerSelection == "scissor" && computerSelection == "Scissor")) {
         return "Draw!";
     }
-    console.log(playerSelection)
-    console.log(playerScore);
-    console.log(computerScore);
+    scoreDisplay.textContent = `The computer chose ${computerSelection} and you chose ${playerSelection}. \n
+                                The scores are computer: ${computerScore} and player: ${playerScore}`
+    if (playerScore == 5) {
+        scoreDisplay.appendChild(winnerDisplay);
+        winnerDisplay.textContent = 'Congratulations, you win!';
+        playerScore = 0;
+        computerScore = 0;
+    } else if (computerScore == 5) {
+        scoreDisplay.appendChild(winnerDisplay);
+        winnerDisplay.textContent == 'The computer wins!';
+        playerScore = 0;
+        computerScore = 0;
+
+    }
 }
 
 
-// function game() {
-//    for (let i = 0; i < 5; i++) {
-//        playRound();
-//     }
-//     if (playerScore > computerScore) {
-//         console.log("Player wins!");
-//     } else if (computerScore > playerScore) {
-//         console.log("Computer has won!");
-//     } else {
-//         console.log("Draw")
-//     }
-// }
 
-//game();
+while (playerScore == 5 || computerScore == 5) {
+    
+    
+    playerScore = 0
+    computerScore = 0
+    break
+}
+
+
