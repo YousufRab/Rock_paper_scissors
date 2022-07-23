@@ -61,7 +61,7 @@ function decideWinner() {
         computerScore = 0;
     } else if (computerScore == 5) {
         scoreDisplay.appendChild(winnerDisplay);
-        winnerDisplay.textContent == 'The computer wins!';
+        winnerDisplay.textContent = 'The computer wins!';
         playerScore = 0;
         computerScore = 0;
     }
