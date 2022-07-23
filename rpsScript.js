@@ -47,11 +47,13 @@ function playRound(playerSelection) {;
         computerScore += 1;
     } else if (playerSelection == "scissor" && computerSelection == "Rock") {
         computerScore += 1;
-    } else if ((playerSelection == "rock" && computerSelection == "Rock") || (playerSelection == "paper" && computerSelection == "Paper") || (playerSelection == "scissor" && computerSelection == "Scissor")) {
-        return "Draw!";
-    }
+    } 
     scoreDisplay.textContent = `The computer chose ${computerSelection} and you chose ${playerSelection}. \n
-                                The scores are computer: ${computerScore} and player: ${playerScore}`
+                                The scores are computer: ${computerScore} and player: ${playerScore}`;
+    decideWinner();
+}
+
+function decideWinner() {
     if (playerScore == 5) {
         scoreDisplay.appendChild(winnerDisplay);
         winnerDisplay.textContent = 'Congratulations, you win!';
@@ -62,18 +64,5 @@ function playRound(playerSelection) {;
         winnerDisplay.textContent == 'The computer wins!';
         playerScore = 0;
         computerScore = 0;
-
     }
 }
-
-
-
-while (playerScore == 5 || computerScore == 5) {
-    
-    
-    playerScore = 0
-    computerScore = 0
-    break
-}
-
-
