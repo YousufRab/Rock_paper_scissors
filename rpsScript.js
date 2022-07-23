@@ -48,7 +48,7 @@ function playRound(playerSelection) {;
     } else if (playerSelection == "scissor" && computerSelection == "Rock") {
         computerScore += 1;
     } 
-    scoreDisplay.textContent = `The computer chose ${computerSelection} and you chose ${playerSelection}. \n
+    scoreDisplay.textContent = `The computer chose ${computerSelection.toLowerCase()} and you chose ${playerSelection}. \n
                                 The scores are computer: ${computerScore} and player: ${playerScore}`;
     decideWinner();
 }
